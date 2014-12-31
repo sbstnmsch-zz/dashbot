@@ -1,0 +1,63 @@
+{
+    // Enforcing options
+
+    // bitwise is forbidden
+    "bitwise":       true,
+    // Use camel case variables
+    "camelcase":     true,
+    // must put oneliners in curly braces
+    "curly":         true,
+    // must use ===
+    "eqeqeq":        true,
+    // must use hasOwnProperty when for in
+    "forin":         true,
+    // may not override standard objects
+    "freeze":         true,
+    // must (function wrap(){})() immediately called functions
+    "immed":         true,
+    // late defs are forbidden. you must define before use
+    "latedef":       true,
+    // maximal cyclomatic complexity
+    "maxcomplexity":   10,
+    // do not nest more than 5 levels deep
+    "maxdepth":         5,
+    // Maximal line length
+    "maxlen":         120,
+    // maximal number of function parameters
+    "maxparams":       10,
+    // Maximal number of statements in a method.
+    "maxstatements": 20,
+    // CAP constructors
+    "newcap":        true,
+    // arguments.caller is evil
+    "noarg":         true,
+    // empty blocks are forbidden
+    "noempty":       true,
+    // Disallow "non-breaking whitespace" characters
+    "nonbsp":        true,
+    // forbids new X(); without assignment
+    "nonew":         true,
+    // disallows double quotes
+    "quotmark":      true,
+    // must use 'use strict'
+    "strict":        true,
+    // forbids use of trailing whitespace
+    "trailing":      true,
+    // forbids use of undefined variables
+    "undef":         true,
+    // forbids unused variables
+    "unused":        true,
+    // just a helper variable
+    "indent": 2,
+
+    // Relaxing options
+
+    "globals": {
+      "define": true,
+      "$": true,
+      "angular": true,
+      "PubSub": true,
+      "module": true,
+      "require": true
+    }
+}

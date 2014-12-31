@@ -1,0 +1,23 @@
+html, body
+  height 100%
+  margin 0
+  padding 0
+
+.dashbot
+  position absolute
+  background-color #222
+  background-repeat no-repeat
+  background-size cover
+  background-position center
+  background-image url(../images/stars.jpg)
+  top 0
+  left 0
+  right 0
+  bottom 0
+  &:before
+    position absolute
+    z-index 8192
+    right 10px
+    bottom 10px
+    color rgba(255, 255, 255, .6)
+    content '@github.com/sbstnmsch/dashbot'

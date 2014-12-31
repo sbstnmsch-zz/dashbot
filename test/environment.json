@@ -1,0 +1,9 @@
+{
+  "host": "",
+  "root": "/",
+  "apiRoot": "dist/mocks/",
+  "apiJsonExtension": ".json",
+  "apiHtmlExtension": "html",
+  "templateRoot": "dist/templates/",
+  "templateExtension": ".html"
+}

@@ -1,0 +1,51 @@
+.dashbot-col__visual
+  display table
+  box-sizing border-box
+  color rgba(255, 255, 255, .7)
+  height 100%
+  width 100%
+  vertical-align middle;
+  background-repeat no-repeat
+  background-size cover
+  background-position center
+
+.dashbot-col-visual__valign
+  display table-cell;
+  text-align center;
+  vertical-align middle;
+  height 100%
+  width 100%
+
+.dashbot-col-visual-valign__data
+  vertical-align middle;
+
+
+.loading .dashbot-col-visual__valign
+  background-image embedurl('../images/spinner.svg')
+  background-size auto 200%
+  background-repeat no-repeat
+  background-position center
+
+/* -------- */
+.dashbot-col-visual__none
+  filter grayscale(100%)
+  transition filter 1s ease-in-out, background-color 1s ease-in-out
+
+.dashbot-col-visual__red
+  filter grayscale(0)
+  background-color rgba(255, 0, 192, .4)
+  transition filter 1s ease-in-out, background-color 1s ease-in-out
+
+.dashbot-col-visual__green
+  filter grayscale(0)
+  background-color rgba(64, 255, 128, .4)
+  transition filter 1s ease-in-out, background-color 1s ease-in-out
+
+.storm
+  background-image url(../images/storm.png)
+
+.night-sky
+  background-image url(../images/night-sky.jpg)
+
+.forest
+  background-image url(../images/forest.jpg)

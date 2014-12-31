@@ -1,0 +1,38 @@
+mqLowHeight = "only screen and (min-height: 400px)"
+mqMidHeight = "only screen and (min-height: 700px)"
+mqBigHeight = "only screen and (min-height: 1000px)"
+
+.dashbot__row
+  display block
+
+.dashbot-row__1
+  height 100%
+
+.dashbot-row__2
+  height 50%
+
+.dashbot-row__3
+  height 33.333333%
+  .bigFont
+    font-size 40px
+    @media mqLowHeight
+      font-size 80px
+    @media mqMidHeight
+      font-size 120px
+    @media mqBigHeight
+      font-size 160px
+  .mediumFont
+    font-size 12px
+    @media mqLowHeight
+      font-size 18px
+    @media mqMidHeight
+      font-size 24px
+    @media mqBigHeight
+      font-size 30px
+
+
+.dashbot-row__4
+  height 25%
+
+.dashbot-row__5
+  height 25%

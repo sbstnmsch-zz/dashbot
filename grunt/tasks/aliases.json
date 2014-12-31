@@ -1,0 +1,30 @@
+{
+  "static": [
+    "clean",
+    "stylus",
+    "autoprefixer",
+    "cssmin",
+    "copy",
+    "clean:dust",
+    "processhtml"
+  ],
+  "lint": [
+    "jshint",
+    "jscs"
+  ],
+  "shrinkwrap": [
+    "shell:shrinkwrap"
+  ],
+  "default": [
+    "static",
+    "lint",
+    "ngconstant:dist",
+    "shell:webpack",
+    "shell:packageinfo"
+  ],
+  "serve": [
+    "static",
+    "ngconstant:local",
+    "concurrent:serve"
+  ]
+}

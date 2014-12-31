@@ -1,0 +1,36 @@
+<!doctype html>
+<html class="no-js" ng-app="dashbot">
+<head>
+  <meta charset="utf-8" />
+  <title>dash-b</title>
+
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width" />
+
+  <link rel="stylesheet" href="/dashbottylesheets/dashbot.min.css" />
+</head>
+
+<body>
+  <div class="dashbot" ng-controller="dashbot.controller">
+    <div class="dashbot__row dashbot-row__{{grid.length}}" ng-repeat="row in grid">
+      <div class="dashbot__col dashbot-col__{{row.length}}" ng-repeat="col in row">
+        <div class="dashbot-col__visual {{col.loading ? 'loading' : ''}} {{col.class}} {{!col.build ? 'dashbot-col-visual__none' : ''}}" style="{{col.style}}">
+          <div class="dashbot-col-visual__valign build dashbot-col-visual__{{col.build}}">
+            <div class="dashbot-col-visual-valign__data">
+
+              <dashbot-visual-number visual="col"></dashbot-visual-number>
+              <dashbot-visual-weather visual="col"></dashbot-visual-weather>
+
+              <div ng-if="! col.visual"><span class="value bigFont">{{col.value}}</span><br />Unkown visual</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script type="text/javascript" src="/dashbot.bundle.js" charset="utf-8"></script>
+
+</body>
+</html>
