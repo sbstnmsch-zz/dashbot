@@ -45,3 +45,6 @@ node_modules
 
 # OS specific files
 .DS_Store
+
+# Don't checkin layout configuration
+/layout.json

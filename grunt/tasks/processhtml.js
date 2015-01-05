@@ -25,7 +25,7 @@ module.exports = {
       data: {
         environment: 'local',
         dashbotcss: 'dist/stylesheets/',
-        dashbotjs: 'dist/javascript/'
+        dashbotjs: '/localhost:9501/'
       }
     }
   }

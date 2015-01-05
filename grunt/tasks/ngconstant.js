@@ -16,7 +16,7 @@ module.exports = {
         mockApiExtension: '',
         templateRoot: '/dashbot/templates/',
         templateExtension: '.html',
-        layoutUrl: '/examples/layout.json'
+        layoutUrl: '/layout.json'
       },
       'dashbot.config.log': {
         enabled: false
@@ -36,7 +36,7 @@ module.exports = {
         mockApiExtension: '.json',
         templateRoot: '/dist/templates/',
         templateExtension: '.html',
-        layoutUrl: '/examples/layout.json'
+        layoutUrl: '/layout.json'
       },
       'dashbot.config.log': {
         enabled: true
@@ -56,7 +56,7 @@ module.exports = {
         mockApiExtension: '.json',
         templateRoot: 'dist/templates/',
         templateExtension: '.html',
-        layoutUrl: '/examples/layout.json'
+        layoutUrl: '/layout.json'
       },
       'dashbot.config.log': {
         enabled: true

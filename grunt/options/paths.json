@@ -10,6 +10,7 @@
   "dist": {
     "root": "dist",
     "js": "dist/javascript",
+    "jsbundle": "dist/javascript/mad-js.bundle.js",
     "css": "dist/stylesheets",
     "fonts": "dist/woff",
     "images": "dist/images",
