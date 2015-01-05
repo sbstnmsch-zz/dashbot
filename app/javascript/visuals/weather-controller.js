@@ -1,7 +1,5 @@
 /* globals module */
 
-// http://api.geonames.org/findNearByWeatherJSON?lat=43&lng=-2&username=demo
-
 module.exports = {
   ngProvider: 'controller',
   ngModule: 'controllers',
@@ -13,7 +11,7 @@ module.exports = {
     'use strict';
 
     var _getWeather = function() {
-      var apiURL = 'http://api.openweathermap.org/data/2.5/weather?lang=en&q=berlin';
+      var apiURL = 'http://api.openweathermap.org/data/2.5/weather?lang=en&q=' + $scope.visual.city;
       $scope.visual.loading = true;
       $http.get(apiURL)
         .success(function(weather) {
@@ -28,6 +26,15 @@ module.exports = {
           } else {
             $scope.temperature = Math.round(((weather.main.temp - 273.15) * 1.8) + 32);
             $scope.unit = 'f';
+          }
+
+          $scope.value = $scope.temperature;
+
+          if ($scope.visual.green && $scope.visual.red) {
+            $scope.visual.build = eval( // jshint ignore:line
+              $scope.value + $scope.visual.green + '? "green" : (' +
+              $scope.value + $scope.visual.red + ' ? "red" : "none") '
+            );
           }
 
           if (weather.name) {
