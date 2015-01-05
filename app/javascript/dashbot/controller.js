@@ -27,7 +27,7 @@ module.exports = {
       $scope.grid = data;
     })
     .error(function() {
-      $scope.grid = [];
+      $scope.grid = [[{ visual: 'number', value: 'Missing layout' }]];
     });
 
   }
