@@ -9,8 +9,8 @@ module.exports = {
       process: true,
       data: {
         environment: 'dist',
-        dashbotcss: 'dashbottylesheets/',
-        dashbotjs: 'dashbotavascript/'
+        dashbotcss: 'dist/stylesheets/',
+        dashbotjs: 'dist/javascript/'
       }
     }
   },
@@ -25,7 +25,7 @@ module.exports = {
       data: {
         environment: 'local',
         dashbotcss: 'dist/stylesheets/',
-        dashbotjs: '/localhost:9501/'
+        dashbotjs: 'dist/javascript/'
       }
     }
   }
