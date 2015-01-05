@@ -13,7 +13,8 @@ module.exports = {
 
     $http.get(
       endpoint.layoutUrl(),
-      { transformResponse: function(data) {
+      {
+        transformResponse: function(data) {
           try {
             return JSON.parse(data);
           } catch (e) {

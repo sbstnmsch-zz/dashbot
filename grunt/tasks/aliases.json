@@ -19,8 +19,7 @@
     "static",
     "lint",
     "ngconstant:dist",
-    "shell:webpack",
-    "shell:packageinfo"
+    "shell:webpack"
   ],
   "serve": [
     "static",

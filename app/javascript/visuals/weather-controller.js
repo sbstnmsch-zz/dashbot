@@ -7,7 +7,7 @@ module.exports = {
   ngModule: 'controllers',
   ngName: 'dashbot.visuals.weather-controller',
   dependencies: [
-  '$scope', '$timeout', '$http'
+    '$scope', '$timeout', '$http'
   ],
   fn: function($scope, $timeout, $http) {
     'use strict';

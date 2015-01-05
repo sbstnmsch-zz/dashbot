@@ -7,7 +7,7 @@ module.exports = {
   ngModule: 'controllers',
   ngName: 'dashbot.visuals.number-controller',
   dependencies: [
-  '$scope', '$timeout', '$http'
+    '$scope', '$timeout', '$http'
   ],
   fn: function($scope, $timeout, $http) {
     'use strict';
@@ -16,11 +16,14 @@ module.exports = {
       var apiURL = $scope.visual.xhr;
       $scope.visual.loading = true;
       $http.get(apiURL)
-        .success(function(data) {
-          $scope.value = eval('data.' + $scope.visual.xhrValue);
+        .success(function(data) { // jshint ignore:line
+          $scope.value = eval('data.' + $scope.visual.xhrValue); // jshint ignore:line
 
           if ($scope.visual.green && $scope.visual.red) {
-            $scope.visual.build = eval($scope.value + $scope.visual.green + '? "green" : (' + $scope.value + $scope.visual.red + ' ? "red" : "none") ');
+            $scope.visual.build = eval( // jshint ignore:line
+              $scope.value + $scope.visual.green + '? "green" : (' +
+              $scope.value + $scope.visual.red + ' ? "red" : "none") '
+            );
           }
 
           $timeout(function() {
