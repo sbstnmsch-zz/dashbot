@@ -21,8 +21,7 @@ module.exports = {
     modulesDirectories: ['bower_modules', 'node_modules', 'app/javascript']
   },
   externals: {
-    angular: 'angular',
-    lodash: '_'
+    angular: 'angular'
   },
   module: {
     loaders: [
