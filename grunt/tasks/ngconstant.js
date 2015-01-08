@@ -54,7 +54,7 @@ module.exports = {
         apiHtmlExtension: '.html',
         mockApiRoot: '/dist/mocks/',
         mockApiExtension: '.json',
-        templateRoot: 'dist/templates/',
+        templateRoot: '/dist/templates/',
         templateExtension: '.html',
         layoutUrl: '/layout.json'
       },
