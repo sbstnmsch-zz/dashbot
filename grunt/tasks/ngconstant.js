@@ -14,7 +14,7 @@ module.exports = {
         apiHtmlExtension: '',
         mockApiRoot: '/internal/mock/',
         mockApiExtension: '',
-        templateRoot: '/dashbot/templates/',
+        templateRoot: 'dist/templates/',
         templateExtension: '.html',
         layoutUrl: '/layout.json'
       },

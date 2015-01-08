@@ -10,7 +10,7 @@
     "type": "git"
   },
   "scripts": {
-    "build": "./node_modules/.bin/webpack --progress --colors --optimize-dedupe --optimize-minimize",
+    "build": "./node_modules/.bin/webpack --progress --colors",
     "serve": "./node_modules/.bin/webpack-dev-server --content-base ./ --colors --port 9501",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
