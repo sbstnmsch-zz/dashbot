@@ -17,11 +17,12 @@ module.exports = {
   },
   resolve: {
     alias: {
-      angular: 'angular'
     },
     modulesDirectories: ['bower_modules', 'node_modules', 'app/javascript']
   },
   externals: {
+    angular: 'angular',
+    lodash: '_'
   },
   module: {
     loaders: [

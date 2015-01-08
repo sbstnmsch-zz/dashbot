@@ -27,7 +27,7 @@
  * modules on demand.
  */
 var
-  angular = require('exports?angular!angular'),
+  angular = require('angular'),
   _ = require('lodash'),
   Initializer = {},
   _ngRootModule,

@@ -3,7 +3,7 @@ module.exports = {
   options: {
     dest: '<%= paths.src.js %>/config/environment.js',
     name: 'dashbot.config',
-    wrap: 'var angular = require("exports?angular!angular"); \n module.exports = {%= __ngModule %}'
+    wrap: 'var angular = require("angular"); \n module.exports = {%= __ngModule %}'
   },
   dist: {
     constants: {
