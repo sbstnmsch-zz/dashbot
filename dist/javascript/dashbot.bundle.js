@@ -232,7 +232,7 @@
 	var angular = __webpack_require__(14); 
 	 module.exports = angular.module('dashbot.config', [])
 	
-	.constant('dashbot.config.environment', {host:'',apiRoot:'/dashbot/',apiJsonExtension:'',apiHtmlExtension:'',mockApiRoot:'/internal/mock/',mockApiExtension:'',templateRoot:'dist/templates/',templateExtension:'.html',layoutUrl:'/layout.json'})
+	.constant('dashbot.config.environment', {host:'',apiRoot:'/dashbot/',apiJsonExtension:'',apiHtmlExtension:'',mockApiRoot:'/internal/mock/',mockApiExtension:'',templateRoot:'/dist/templates/',templateExtension:'.html',layoutUrl:'/layout.json'})
 	
 	.constant('dashbot.config.log', {enabled:false})
 	
