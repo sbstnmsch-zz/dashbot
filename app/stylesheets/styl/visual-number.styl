@@ -1,2 +1,12 @@
-//.dashbot_visual__number
-//  color #e7e7e7
+.dashbot_visual__number .value.unit_bytes:after
+	font-size 40%
+	opacity .5
+
+.value.unit_bytes.b:after
+	content 'B'
+
+.value.unit_bytes.kb:after
+	content 'KB'
+
+.value.unit_bytes.mb:after
+	content 'MB'
