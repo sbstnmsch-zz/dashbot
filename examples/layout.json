@@ -1,15 +1,18 @@
 [
 	[
-		{ "visual": "number", "class": "forest", "title": "so many numbers", "xhr": "https://qrng.anu.edu.au/API/jsonI.php?length=1&type=uint8", "xhrValue": "data[0]", "xhrInterval": 26, "green": "<100", "red": ">100"}
+		{ "visual": "number", "class": "storm", "title": "Collaborators",  "xhr": "/examples/collaborators.json", "xhrValue": "value", "xhrInterval": 33},
+		{ "visual": "number", "class": "night-sky", "title": "Forks",  "xhr": "/examples/forks.json", "xhrValue": "value", "xhrInterval": 41},
+		{ "visual": "number", "class": "forest", "title": "Stargazers",  "xhr": "/examples/stargazers.json", "xhrValue": "value", "xhrInterval": 19},
+		{ "visual": "number", "title": "Issues",  "xhr": "/examples/issues.json", "xhrValue": "value", "xhrInterval": 12, "green": "<=0", "red": ">0" }
 	],
 	[
-		{ "visual": "number", "class": "storm", "title": "random", "xhr": "https://qrng.anu.edu.au/API/jsonI.php?length=1&type=uint8", "xhrValue": "data[0]", "xhrInterval": 10, "green": "<100", "red": ">100" },
-		{ "visual": "number", "xhr": "https://qrng.anu.edu.au/API/jsonI.php?length=1&type=uint8", "xhrValue": "data[0]", "xhrInterval": 16, "green": "<100", "red": ">100" },
-		{ "visual": "weather", "class": "night-sky", "city": "berlin", "unit": "c" }
+		{ "visual": "number", "class": "night-sky", "build": "green", "value": "OK", "title": "Build" },
+		{ "visual": "number", "class": "forest", "unit": "bytes", "value": "2192", "title": "Code" },
+		{ "visual": "number", "class": "storm", "unit": "percent", "build": "red", "value": "82", "title": "Coverage" },
+		{ "visual": "weather", "class": "night-sky", "city": "berlin", "unit": "c", "green": ">0", "red": "<=0"  }
 	],
 	[
-		{ "visual": "number", "class": "night-sky", "title": "Fun numbers", "xhr": "https://qrng.anu.edu.au/API/jsonI.php?length=1&type=uint8", "xhrValue": "data[0]", "xhrInterval": 12, "green": ">100", "red": "<100" },
-		{ "visual": "number", "class": "storm", "title": "noobs", "value": 24 },
-		{ "visual": "number", "build": "red", "title": "number of the day", "value": 42 }
+		{ "visual": "graph", "title": "Sample graph", "value": [101,402,203,801,1014,1112,1403,2014,108]},
+		{ "visual": "number", "class": "forest", "title": "@github.com/sbstnmsch/dashbot", "build": "green", "value": "dashbot"}
 	]
 ]
