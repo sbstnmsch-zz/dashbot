@@ -11,11 +11,11 @@ $ npm install
 $ copy examples/layout.json ./layout.json
 $ grunt serve
 ```
-Point your brower to http://localhost:9501
+Point your browser to http://localhost:9501
 
 ## Serving it
 To serve the dashboard with nginx or another webserver edit the layout.json to serve your needs
-and point your browser to http://localhost:9501/dist/templates/index.html
+and point your browser to http://your-server.tld/dist/templates/index.html
 
 ## Notes
 For polling other than local URLs (like in the example) start up your browser with disabled security, i.e. Chrome with:
