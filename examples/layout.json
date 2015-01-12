@@ -2,17 +2,17 @@
 	[
 		{ "visual": "number", "class": "storm", "title": "Collaborators",  "xhr": "/examples/collaborators.json", "xhrValue": "value", "xhrInterval": 33},
 		{ "visual": "number", "class": "night-sky", "title": "Forks",  "xhr": "/examples/forks.json", "xhrValue": "value", "xhrInterval": 41},
-		{ "visual": "number", "class": "forest", "title": "Stargazers",  "xhr": "/examples/stargazers.json", "xhrValue": "value", "xhrInterval": 19},
-		{ "visual": "number", "title": "Issues",  "xhr": "/examples/issues.json", "xhrValue": "value", "xhrInterval": 12, "green": "<=0", "red": ">0" }
+		{ "visual": "number", "class": "flower", "title": "Stargazers",  "xhr": "/examples/stargazers.json", "xhrValue": "value", "xhrInterval": 19},
+		{ "visual": "number", "class": "comets", "title": "Issues",  "xhr": "/examples/issues.json", "xhrValue": "value", "xhrInterval": 12, "green": "<=0", "red": ">0" }
 	],
 	[
-		{ "visual": "number", "class": "night-sky", "build": "green", "value": "OK", "title": "Build" },
-		{ "visual": "number", "class": "forest", "unit": "bytes", "value": "2192", "title": "Code" },
-		{ "visual": "number", "class": "storm", "unit": "percent", "build": "red", "value": "82", "title": "Coverage" },
-		{ "visual": "weather", "class": "night-sky", "city": "berlin", "unit": "c", "green": ">0", "red": "<=0"  }
+		{ "visual": "number", "class": "comets", "build": "green", "value": "OK", "title": "Build" },
+		{ "visual": "number", "class": "skyline", "unit": "bytes", "value": "2192", "title": "Code" },
+		{ "visual": "number", "class": "desert", "unit": "percent", "build": "red", "value": "82", "title": "Coverage" },
+		{ "visual": "weather", "class": "storm", "city": "berlin", "unit": "c", "green": ">0", "red": "<=0"  }
 	],
 	[
 		{ "visual": "graph", "title": "Sample graph", "value": [101,402,203,801,1014,1112,1403,2014,108]},
-		{ "visual": "number", "class": "forest", "title": "@github.com/sbstnmsch/dashbot", "build": "green", "value": "dashbot"}
+		{ "visual": "number", "class": "waterfall", "title": "@github.com/sbstnmsch/dashbot", "build": "green", "value": "dashbot"}
 	]
 ]
