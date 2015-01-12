@@ -61,7 +61,7 @@ The simplest way to display a number visual with a static value and title:
 {
   "visual": "number",
   "title": "Ali Baba and the...",
-  "value": "40"
+  "value": 40
 }
 ```
 
