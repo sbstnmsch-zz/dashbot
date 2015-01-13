@@ -135,7 +135,8 @@ The graph visual displays more than one value in a graph:
 }
 ```
 
-Note: Polling external resources is still not implemented yet. Feel free :-)
+Enjoy polling external resources by adding `xhr` and `xhrInterval` 
+parameters.
 
 ### Weather Visual
 Just for fun - getting the temperature in your `city`.

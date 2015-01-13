@@ -16,23 +16,35 @@ module.exports = {
       var apiURL = $scope.visual.xhr;
       $scope.visual.loading = true;
       $http.get(apiURL)
-        .success(function(data) { // jshint ignore:line
-          $scope.value = eval('data.' + $scope.visual.xhrValue); // jshint ignore:line
+      .success(function(data) {
+        _draw(data || []);
+        $timeout(function() {
+          $scope.visual.loading = false;
+        }, 1000);
+        if ($scope.visual.xhrInterval) {
+          $timeout(_getJson, $scope.visual.xhrInterval * 1000);
+        }
+      });
+    },
+    _draw = function(v) {
+      var i = 0;
 
-          if ($scope.visual.green && $scope.visual.red) {
-            $scope.visual.build = eval( // jshint ignore:line
-              $scope.value + $scope.visual.green + '? "green" : (' +
-              $scope.value + $scope.visual.red + ' ? "red" : "none") '
-            );
-          }
+      $scope.values = v;
 
-          $timeout(function() {
-            $scope.visual.loading = false;
-          }, 1000);
-          if ($scope.visual.xhrInterval) {
-            $timeout(_getJson, $scope.visual.xhrInterval * 1000);
-          }
-        });
+      $scope.min = 2000000;
+      $scope.max = -2000000;
+
+      for (i = 0;i < $scope.values.length; ++i) {
+        if ($scope.values[i] > $scope.max) {
+          $scope.max = $scope.values[i];
+        } else if ($scope.values[i] < $scope.min) {
+          $scope.min = $scope.values[i];
+        }
+      }
+
+      $scope.delta = $scope.max - $scope.min;
+      $scope.stepx = 90 / $scope.values.length;
+      $scope.stepy = 50 / $scope.delta;
     };
 
     if ($scope.visual.visual === 'graph') {
@@ -40,6 +52,7 @@ module.exports = {
         _getJson();
       } else {
         $scope.value = $scope.visual.value;
+        _draw($scope.value || []);
       }
     }
   }

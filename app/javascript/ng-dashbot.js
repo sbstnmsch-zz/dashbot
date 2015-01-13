@@ -12,8 +12,6 @@ initializer
   .register(require('visuals/number-directive'))
   .register(require('visuals/graph-controller'))
   .register(require('visuals/graph-directive'))
-  .register(require('visuals/graph-drawer-controller'))
-  .register(require('visuals/graph-drawer-directive'))
   .register(require('visuals/weather-controller'))
   .register(require('visuals/weather-directive'))
   .register(require('util/encodeuri'))

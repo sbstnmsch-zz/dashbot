@@ -46,7 +46,7 @@
 
 	__webpack_require__(2);
 	var
-	    ngApp = __webpack_require__(17),
+	    ngApp = __webpack_require__(15),
 	    initializer = __webpack_require__(1),
 	    ngModule;
 	
@@ -63,8 +63,6 @@
 	  .register(__webpack_require__(12))
 	  .register(__webpack_require__(13))
 	  .register(__webpack_require__(14))
-	  .register(__webpack_require__(15))
-	  .register(__webpack_require__(16))
 	  .initialize(function() {
 	    'use strict';
 	
@@ -119,8 +117,8 @@
 	 * modules on demand.
 	 */
 	var
-	  angular = __webpack_require__(18),
-	  _ = __webpack_require__(19),
+	  angular = __webpack_require__(16),
+	  _ = __webpack_require__(17),
 	  Initializer = {},
 	  _ngRootModule,
 	  _ngModules = {},
@@ -233,7 +231,7 @@
 /* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var angular = __webpack_require__(18); 
+	var angular = __webpack_require__(16); 
 	 module.exports = angular.module('dashbot.config', [])
 	
 	.constant('dashbot.config.environment', {host:'',apiRoot:'/dashbot/',apiJsonExtension:'',apiHtmlExtension:'',mockApiRoot:'/internal/mock/',mockApiExtension:'',templateRoot:'/dist/templates/',templateExtension:'.html',layoutUrl:'/layout.json'})
@@ -436,23 +434,35 @@
 	      var apiURL = $scope.visual.xhr;
 	      $scope.visual.loading = true;
 	      $http.get(apiURL)
-	        .success(function(data) { // jshint ignore:line
-	          $scope.value = eval('data.' + $scope.visual.xhrValue); // jshint ignore:line
+	      .success(function(data) {
+	        _draw(data || []);
+	        $timeout(function() {
+	          $scope.visual.loading = false;
+	        }, 1000);
+	        if ($scope.visual.xhrInterval) {
+	          $timeout(_getJson, $scope.visual.xhrInterval * 1000);
+	        }
+	      });
+	    },
+	    _draw = function(v) {
+	      var i = 0;
 	
-	          if ($scope.visual.green && $scope.visual.red) {
-	            $scope.visual.build = eval( // jshint ignore:line
-	              $scope.value + $scope.visual.green + '? "green" : (' +
-	              $scope.value + $scope.visual.red + ' ? "red" : "none") '
-	            );
-	          }
+	      $scope.values = v;
 	
-	          $timeout(function() {
-	            $scope.visual.loading = false;
-	          }, 1000);
-	          if ($scope.visual.xhrInterval) {
-	            $timeout(_getJson, $scope.visual.xhrInterval * 1000);
-	          }
-	        });
+	      $scope.min = 2000000;
+	      $scope.max = -2000000;
+	
+	      for (i = 0;i < $scope.values.length; ++i) {
+	        if ($scope.values[i] > $scope.max) {
+	          $scope.max = $scope.values[i];
+	        } else if ($scope.values[i] < $scope.min) {
+	          $scope.min = $scope.values[i];
+	        }
+	      }
+	
+	      $scope.delta = $scope.max - $scope.min;
+	      $scope.stepx = 90 / $scope.values.length;
+	      $scope.stepy = 50 / $scope.delta;
 	    };
 	
 	    if ($scope.visual.visual === 'graph') {
@@ -460,6 +470,7 @@
 	        _getJson();
 	      } else {
 	        $scope.value = $scope.visual.value;
+	        _draw($scope.value || []);
 	      }
 	    }
 	  }
@@ -496,72 +507,6 @@
 
 /***/ },
 /* 10 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* globals module */
-	
-	// http://api.geonames.org/findNearByWeatherJSON?lat=43&lng=-2&username=demo
-	
-	module.exports = {
-	  ngProvider: 'controller',
-	  ngModule: 'controllers',
-	  ngName: 'dashbot.visuals.graph-drawer-controller',
-	  dependencies: [
-	    '$scope'
-	  ],
-	  fn: function($scope) {
-	    'use strict';
-	
-	    var i = 0;
-	
-	    $scope.min = 2000000;
-	    $scope.max = -2000000;
-	
-	    for (i = 0;i < $scope.values.length; ++i) {
-	      if ($scope.values[i] > $scope.max) {
-	        $scope.max = $scope.values[i];
-	      } else if ($scope.values[i] < $scope.min) {
-	        $scope.min = $scope.values[i];
-	      }
-	    }
-	
-	    $scope.delta = $scope.max - $scope.min;
-	    $scope.stepx = 90 / $scope.values.length;
-	    $scope.stepy = 50 / $scope.delta;
-	  }
-	};
-
-
-/***/ },
-/* 11 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* globals module */
-	
-	module.exports = {
-	  ngProvider: 'directive',
-	  ngModule: 'directives',
-	  ngName: 'dashbotVisualGraphDrawer',
-	  dependencies: ['dashbot.util.template'],
-	  fn: function(templateFactory) {
-	    'use strict';
-	
-	    return {
-	      restrict: 'E',
-	      controller: 'dashbot.visuals.graph-drawer-controller',
-	      templateUrl: templateFactory.url('graph-drawer-visual'),
-	      scope: {
-	        values: '='
-	      },
-	      link: function() {
-	      }
-	    };
-	  }
-	};
-
-
-/***/ },
-/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* globals module */
@@ -618,7 +563,7 @@
 
 
 /***/ },
-/* 13 */
+/* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* globals module */
@@ -646,7 +591,7 @@
 
 
 /***/ },
-/* 14 */
+/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = {
@@ -663,7 +608,7 @@
 
 
 /***/ },
-/* 15 */
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = {
@@ -736,7 +681,7 @@
 
 
 /***/ },
-/* 16 */
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = {
@@ -775,7 +720,7 @@
 
 
 /***/ },
-/* 17 */
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = {
@@ -785,13 +730,13 @@
 	}
 
 /***/ },
-/* 18 */
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = angular;
 
 /***/ },
-/* 19 */
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(module, global) {/**
@@ -7952,10 +7897,10 @@
 	  }
 	}.call(this));
 	
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(20)(module), (function() { return this; }())))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(18)(module), (function() { return this; }())))
 
 /***/ },
-/* 20 */
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(module) {
