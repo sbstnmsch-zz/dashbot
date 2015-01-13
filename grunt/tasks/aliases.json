@@ -16,6 +16,7 @@
     "shell:shrinkwrap"
   ],
   "default": [
+    "checkDependencies",
     "static",
     "lint",
     "ngconstant:dist",
