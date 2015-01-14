@@ -46,7 +46,7 @@
 
 	__webpack_require__(2);
 	var
-	    ngApp = __webpack_require__(15),
+	    ngApp = __webpack_require__(16),
 	    initializer = __webpack_require__(1),
 	    ngModule;
 	
@@ -117,7 +117,7 @@
 	 * modules on demand.
 	 */
 	var
-	  angular = __webpack_require__(16),
+	  angular = __webpack_require__(15),
 	  _ = __webpack_require__(17),
 	  Initializer = {},
 	  _ngRootModule,
@@ -231,7 +231,7 @@
 /* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var angular = __webpack_require__(16); 
+	var angular = __webpack_require__(15); 
 	 module.exports = angular.module('dashbot.config', [])
 	
 	.constant('dashbot.config.environment', {host:'',apiRoot:'/dashbot/',apiJsonExtension:'',apiHtmlExtension:'',mockApiRoot:'/internal/mock/',mockApiExtension:'',templateRoot:'/dist/templates/',templateExtension:'.html',layoutUrl:'/layout.json'})
@@ -350,22 +350,29 @@
 	    },
 	
 	    _getJson = function() {
-	      var apiURL = $scope.visual.xhr;
+	      var
+	        apiURL = $scope.visual.xhr,
+	        newValue;
+	
 	      $scope.visual.loading = true;
 	      $http.get(apiURL)
 	        .success(function(data) { // jshint ignore:line
-	          $scope.value = eval('data.' + $scope.visual.xhrValue); // jshint ignore:line
-	          _format();
-	          if ($scope.visual.green && $scope.visual.red) {
-	            $scope.visual.build = eval( // jshint ignore:line
-	              $scope.value + $scope.visual.green + '? "green" : (' +
-	              $scope.value + $scope.visual.red + ' ? "red" : "none") '
-	            );
-	          }
+	          newValue = eval('data.' + $scope.visual.xhrValue); // jshint ignore:line
 	
-	          $timeout(function() {
-	            $scope.visual.loading = false;
-	          }, 1000);
+	          if (!isNaN(newValue)) {
+	            $scope.value = newValue;
+	            _format();
+	            if ($scope.visual.green && $scope.visual.red) {
+	              $scope.visual.build = eval( // jshint ignore:line
+	                $scope.value + $scope.visual.green + '? "green" : (' +
+	                $scope.value + $scope.visual.red + ' ? "red" : "none") '
+	              );
+	            }
+	
+	            $timeout(function() {
+	              $scope.visual.loading = false;
+	            }, 1000);
+	          }
 	          if ($scope.visual.xhrInterval) {
 	            $timeout(_getJson, $scope.visual.xhrInterval * 1000);
 	          }
@@ -723,17 +730,17 @@
 /* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = {
-		"version": "0.0.1",
-		"ngModule": "dashbot",
-		"components": []
-	}
+	module.exports = angular;
 
 /***/ },
 /* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = angular;
+	module.exports = {
+		"version": "0.0.1",
+		"ngModule": "dashbot",
+		"components": []
+	}
 
 /***/ },
 /* 17 */
