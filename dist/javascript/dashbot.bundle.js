@@ -46,7 +46,7 @@
 
 	__webpack_require__(2);
 	var
-	    ngApp = __webpack_require__(16),
+	    ngApp = __webpack_require__(15),
 	    initializer = __webpack_require__(1),
 	    ngModule;
 	
@@ -117,7 +117,7 @@
 	 * modules on demand.
 	 */
 	var
-	  angular = __webpack_require__(15),
+	  angular = __webpack_require__(16),
 	  _ = __webpack_require__(17),
 	  Initializer = {},
 	  _ngRootModule,
@@ -231,7 +231,7 @@
 /* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var angular = __webpack_require__(15); 
+	var angular = __webpack_require__(16); 
 	 module.exports = angular.module('dashbot.config', [])
 	
 	.constant('dashbot.config.environment', {host:'',apiRoot:'/dashbot/',apiJsonExtension:'',apiHtmlExtension:'',mockApiRoot:'/internal/mock/',mockApiExtension:'',templateRoot:'/dist/templates/',templateExtension:'.html',layoutUrl:'/layout.json'})
@@ -730,17 +730,17 @@
 /* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = angular;
-
-/***/ },
-/* 16 */
-/***/ function(module, exports, __webpack_require__) {
-
 	module.exports = {
 		"version": "0.0.1",
 		"ngModule": "dashbot",
 		"components": []
 	}
+
+/***/ },
+/* 16 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = angular;
 
 /***/ },
 /* 17 */
