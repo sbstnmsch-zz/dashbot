@@ -10,6 +10,8 @@ initializer
   .register(require('dashbot/controller'))
   .register(require('visuals/number-controller'))
   .register(require('visuals/number-directive'))
+  .register(require('visuals/buildchain-controller'))
+  .register(require('visuals/buildchain-directive'))
   .register(require('visuals/graph-controller'))
   .register(require('visuals/graph-directive'))
   .register(require('visuals/weather-controller'))

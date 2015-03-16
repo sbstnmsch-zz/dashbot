@@ -1,0 +1,10 @@
+.dashbot_visual__buildchain .value.ok:after
+	font-size 40%
+	opacity .5
+	content '✓'
+
+.dashbot_visual__buildchain .value.failure:not(:last-child):after
+	content: 'and';
+	color: rgba(255,255,255,.4);
+	display:block;
+	clear:both;
