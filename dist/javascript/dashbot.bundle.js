@@ -46,7 +46,7 @@
 
 	__webpack_require__(2);
 	var
-	    ngApp = __webpack_require__(15),
+	    ngApp = __webpack_require__(18),
 	    initializer = __webpack_require__(1),
 	    ngModule;
 	
@@ -63,6 +63,8 @@
 	  .register(__webpack_require__(12))
 	  .register(__webpack_require__(13))
 	  .register(__webpack_require__(14))
+	  .register(__webpack_require__(15))
+	  .register(__webpack_require__(16))
 	  .initialize(function() {
 	    'use strict';
 	
@@ -117,8 +119,8 @@
 	 * modules on demand.
 	 */
 	var
-	  angular = __webpack_require__(16),
-	  _ = __webpack_require__(17),
+	  angular = __webpack_require__(17),
+	  _ = __webpack_require__(19),
 	  Initializer = {},
 	  _ngRootModule,
 	  _ngModules = {},
@@ -231,7 +233,7 @@
 /* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var angular = __webpack_require__(16); 
+	var angular = __webpack_require__(17); 
 	 module.exports = angular.module('dashbot.config', [])
 	
 	.constant('dashbot.config.environment', {host:'',apiRoot:'/dashbot/',apiJsonExtension:'',apiHtmlExtension:'',mockApiRoot:'/internal/mock/',mockApiExtension:'',templateRoot:'/dist/templates/',templateExtension:'.html',layoutUrl:'/layout.json'})
@@ -430,6 +432,93 @@
 	module.exports = {
 	  ngProvider: 'controller',
 	  ngModule: 'controllers',
+	  ngName: 'dashbot.visuals.buildchain-controller',
+	  dependencies: [
+	    '$scope', '$timeout', '$http'
+	  ],
+	  fn: function($scope, $timeout, $http) {
+	    'use strict';
+	
+	    var _getJson = function() {
+	      var
+	        apiURL = $scope.visual.xhr,
+	        i,
+	        build = true;
+	
+	      $scope.visual.loading = true;
+	      $http.get(apiURL)
+	        .success(function(data) { // jshint ignore:line
+	
+	          $scope.visual.since = new Date();
+	          for (i = 0; i < data.length; ++i) {
+	            if (data[i].status.toLowerCase() === 'failure') {
+	              build = false;
+	              data.shift();
+	              $scope.visual.failures = data;
+	              i = data.length;
+	            }
+	          }
+	
+	          $scope.visual.build = build ? 'green' : 'red';
+	
+	          $timeout(function() {
+	            $scope.visual.loading = false;
+	          }, 1000);
+	
+	          if ($scope.visual.xhrInterval) {
+	            $timeout(_getJson, $scope.visual.xhrInterval * 1000);
+	          }
+	        });
+	    };
+	
+	    if ($scope.visual.visual === 'buildchain') {
+	      if ($scope.visual.xhr) {
+	        _getJson();
+	      }
+	    }
+	  }
+	};
+
+
+/***/ },
+/* 9 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* globals module */
+	
+	module.exports = {
+	  ngProvider: 'directive',
+	  ngModule: 'directives',
+	  ngName: 'dashbotVisualBuildchain',
+	  dependencies: ['dashbot.util.template'],
+	  fn: function(templateFactory) {
+	    'use strict';
+	
+	    return {
+	      restrict: 'E',
+	      controller: 'dashbot.visuals.buildchain-controller',
+	      templateUrl: templateFactory.url('buildchain-visual'),
+	      scope: {
+	        visual: '='
+	      },
+	      link: function() {
+	      }
+	    };
+	  }
+	};
+
+
+/***/ },
+/* 10 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* globals module */
+	
+	// http://api.geonames.org/findNearByWeatherJSON?lat=43&lng=-2&username=demo
+	
+	module.exports = {
+	  ngProvider: 'controller',
+	  ngModule: 'controllers',
 	  ngName: 'dashbot.visuals.graph-controller',
 	  dependencies: [
 	    '$scope', '$timeout', '$http'
@@ -485,7 +574,7 @@
 
 
 /***/ },
-/* 9 */
+/* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* globals module */
@@ -513,7 +602,7 @@
 
 
 /***/ },
-/* 10 */
+/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* globals module */
@@ -570,7 +659,7 @@
 
 
 /***/ },
-/* 11 */
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* globals module */
@@ -598,7 +687,7 @@
 
 
 /***/ },
-/* 12 */
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = {
@@ -615,7 +704,7 @@
 
 
 /***/ },
-/* 13 */
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = {
@@ -688,7 +777,7 @@
 
 
 /***/ },
-/* 14 */
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = {
@@ -727,7 +816,13 @@
 
 
 /***/ },
-/* 15 */
+/* 17 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = angular;
+
+/***/ },
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = {
@@ -737,13 +832,7 @@
 	}
 
 /***/ },
-/* 16 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = angular;
-
-/***/ },
-/* 17 */
+/* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(module, global) {/**
@@ -7904,10 +7993,10 @@
 	  }
 	}.call(this));
 	
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(18)(module), (function() { return this; }())))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(20)(module), (function() { return this; }())))
 
 /***/ },
-/* 18 */
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function(module) {

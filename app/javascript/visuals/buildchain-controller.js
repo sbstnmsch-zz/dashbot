@@ -12,12 +12,7 @@ module.exports = {
   fn: function($scope, $timeout, $http) {
     'use strict';
 
-    var
-    _format = function() {
-
-    },
-
-    _getJson = function() {
+    var _getJson = function() {
       var
         apiURL = $scope.visual.xhr,
         i,
@@ -28,9 +23,10 @@ module.exports = {
         .success(function(data) { // jshint ignore:line
 
           $scope.visual.since = new Date();
-          for (i=0; i < data.length; ++i) {
-            if (data[i].status === 'failure') {
+          for (i = 0; i < data.length; ++i) {
+            if (data[i].status.toLowerCase() === 'failure') {
               build = false;
+              data.shift();
               $scope.visual.failures = data;
               i = data.length;
             }
