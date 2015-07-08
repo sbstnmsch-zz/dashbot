@@ -2,7 +2,7 @@
 
 ... is yet another live dashboard solution to monitor your software- or
 product development process. Use it for dashboards served by a i.e.
-Rasperry PI or as a intranet website.
+Rasperry PI or as an intranet website.
 
 ![](examples/screenshot.png "Looks like")
 
