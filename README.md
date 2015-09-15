@@ -15,7 +15,7 @@ copy examples/layout.json ./layout.json
 grunt serve
 ```
 
-Point your browser to `http://localhost:9501`
+Point your browser to [http://localhost:9501](http://localhost:9501)
 
 ## Serve it
 To serve the dashboard with nginx or another webserver edit the layout.json to
