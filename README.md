@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/sbstnmsch/dashbot.svg?branch=master)](https://travis-ci.org/sbstnmsch/dashbot)
+
 # dashbot
 
 ... is yet another live dashboard solution to monitor your software- or
