@@ -2,7 +2,7 @@ npm-debug.log*
 
 .grunt
 
-app/javascript/config/Environment.js
+app/javascript/config/environment.js
 
 dist
 
