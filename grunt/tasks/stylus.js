@@ -4,7 +4,8 @@ module.exports = {
     options: {
       compress: false,
       linenos: false,
-      urlfunc: 'embedurl' // use embedurl('test.png') in our code to trigger Data URI embedding
+      urlfunc: 'embedurl' // use embedurl('test.png') in our code to trigger
+                          // Data URI embedding
     },
     files: {
       '<%= paths.src.css %>/stylus-out.css': [

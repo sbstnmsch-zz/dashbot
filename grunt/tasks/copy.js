@@ -1,8 +1,8 @@
 module.exports = {
-  images: {
-    cwd: '<%= paths.src.images %>',
-    src: '**/*',
-    dest: '<%= paths.dist.images %>',
+  angular: {
+    cwd: '<%= paths.src.angular %>',
+    src: 'angular.min.js',
+    dest: '<%= paths.dist.angular %>',
     expand: true
   },
   fonts: {
@@ -11,16 +11,22 @@ module.exports = {
     dest: '<%= paths.dist.fonts %>',
     expand: true
   },
+  images: {
+    cwd: '<%= paths.src.images %>',
+    src: '**/*',
+    dest: '<%= paths.dist.images %>',
+    expand: true
+  },
   templates: {
     cwd: '<%= paths.src.templates %>',
     src: '**/*',
     dest: '<%= paths.dist.templates %>',
     expand: true
   },
-  mocks: {
-    cwd: '<%= paths.src.mocks %>',
-    src: '**/*',
-    dest: '<%= paths.dist.mocks %>',
+  data: {
+    cwd: '<%= paths.src.data %>',
+    src: '**/*.json',
+    dest: '<%= paths.dist.data %>',
     expand: true
   }
 };

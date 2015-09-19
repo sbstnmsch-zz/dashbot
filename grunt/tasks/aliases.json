@@ -1,30 +1,18 @@
 {
-  "static": [
-    "clean",
+  "default": [
+    "clean:before",
     "stylus",
     "autoprefixer",
     "cssmin",
     "copy",
-    "clean:dust",
-    "processhtml"
-  ],
-  "lint": [
+    "processhtml",
     "jshint",
-    "jscs"
+    "jscs",
+    "ngconstant",
+    "shell:webpack",
+    "clean:after"
   ],
-  "shrinkwrap": [
-    "shell:shrinkwrap"
-  ],
-  "default": [
-    "checkDependencies",
-    "static",
-    "lint",
-    "ngconstant:dist",
-    "shell:webpack"
-  ],
-  "serve": [
-    "static",
-    "ngconstant:local",
-    "concurrent:serve"
+  "build": [
+    "default"
   ]
 }

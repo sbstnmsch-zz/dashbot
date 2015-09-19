@@ -1,9 +1,9 @@
 [
 	[
-		{ "visual": "number", "class": "storm", "title": "Collaborators",  "xhr": "/examples/collaborators.json", "xhrValue": "value", "xhrInterval": 33},
-		{ "visual": "number", "class": "night-sky", "title": "Forks",  "xhr": "/examples/forks.json", "xhrValue": "value", "xhrInterval": 41},
-		{ "visual": "number", "class": "flower", "title": "Stargazers",  "xhr": "/examples/stargazers.json", "xhrValue": "value", "xhrInterval": 19},
-		{ "visual": "number", "class": "comets", "title": "Issues",  "xhr": "/examples/issues.json", "xhrValue": "value", "xhrInterval": 12, "green": "<=0", "red": ">0" }
+		{ "visual": "number", "class": "storm", "title": "Collaborators",  "xhr": "/data/collaborators.json", "xhrValue": "value", "xhrInterval": 33},
+		{ "visual": "number", "class": "night-sky", "title": "Forks",  "xhr": "/data/forks.json", "xhrValue": "value", "xhrInterval": 41},
+		{ "visual": "number", "class": "flower", "title": "Stargazers",  "xhr": "/data/stargazers.json", "xhrValue": "value", "xhrInterval": 19},
+		{ "visual": "number", "class": "comets", "title": "Issues",  "xhr": "/data/issues.json", "xhrValue": "value", "xhrInterval": 12, "green": "<=0", "red": ">0" }
 	],
 	[
 		{ "visual": "number", "class": "comets", "build": "green", "value": "OK", "title": "Build" },

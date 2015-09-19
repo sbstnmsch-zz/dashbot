@@ -1,15 +1,10 @@
 <!doctype html>
-<html class="no-js" ng-app="dashbot">
+<html ng-app="dashbot">
 <head>
   <meta charset="utf-8" />
-  <title>dash-b</title>
-
-  <meta name="description" content="" />
+  <title>dashbot</title>
   <meta name="viewport" content="width=device-width" />
-
-  <!-- build:[href] / -->
-  <link rel="stylesheet" href="<%= dashbotcss %>dashbot.min.css" />
-  <!-- /build -->
+  <link rel="stylesheet" href="dashbot.min.css" />
 </head>
 
 <body>
@@ -34,15 +29,8 @@
     </div>
   </div>
 
-  <script type="text/javascript" src="/bower_modules/angular/angular.min.js" charset="utf-8"></script>
-
-<!-- build:[src] / -->
-  <script type="text/javascript" src="<%= dashbotjs %>dashbot.bundle.js" charset="utf-8"></script>
-<!-- /build -->
-
-<!-- build:remove:dist / -->
-  <script src="http://localhost:9501/webpack-dev-server.js"></script>
-<!-- /build -->
+  <script type="text/javascript" src="angular.min.js" charset="utf-8"></script>
+  <script type="text/javascript" src="dashbot.bundle.js" charset="utf-8" defer></script>
 
 </body>
 </html>

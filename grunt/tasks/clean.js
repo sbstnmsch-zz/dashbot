@@ -1,13 +1,10 @@
 module.exports = {
-  all: {
+  before: {
     src: [
-      '<%= paths.dist.css %>',
-      '<%= paths.dist.images %>',
-      '<%= paths.dist.templates %>',
-      '<%= paths.dist.mocks %>'
+      '<%= paths.dist.root %>'
     ]
   },
-  dust: {
+  after: {
     src: ['<%= paths.src.css %>/*.css']
   }
 };

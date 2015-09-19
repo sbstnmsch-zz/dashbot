@@ -4,23 +4,29 @@
 product development process. Use it for dashboards served by a i.e.
 Rasperry PI or as an intranet website.
 
-![](examples/screenshot.png "Looks like")
+![](app/examples/screenshot.png "Looks like")
+
+## Build it
+
+```shell
+$ npm install
+$ grunt
+```
 
 ## Run it
 
 ```shell
-bower install
-npm install
-copy examples/layout.json ./layout.json
-grunt serve
+$ npm install
+$ grunt
+$ nginxere # available at https://github.com/sbstnmsch/nginxere
+           # or just serve ./dist with your favorite webserver
 ```
 
-Point your browser to [http://localhost:9501](http://localhost:9501)
+Point your browser to [http://localhost:8000](http://localhost:8000)
 
 ## Serve it
 To serve the dashboard with nginx or another webserver edit the layout.json to
-serve your needs and point your browser to
-`http://your-server.tld/dist/templates/index.html`.
+serve your needs and point your webserver's root to `dist/`.
 
 ### Notes on CORS
 For polling other than local URLs (like in the example) start up your browser
@@ -135,7 +141,7 @@ The graph visual displays more than one value in a graph:
 }
 ```
 
-Enjoy polling external resources by adding `xhr` and `xhrInterval` 
+Enjoy polling external resources by adding `xhr` and `xhrInterval`
 parameters.
 
 ### Weather Visual

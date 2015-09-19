@@ -5,58 +5,16 @@ module.exports = {
     name: 'dashbot.config',
     wrap: 'var angular = require("angular"); \n module.exports = {%= __ngModule %}'
   },
-  dist: {
+  default: {
     constants: {
       'dashbot.config.environment': {
         host: '',
-        apiRoot: '/dashbot/',
+        apiRoot: '/api/',
         apiJsonExtension: '',
         apiHtmlExtension: '',
-        mockApiRoot: '/internal/mock/',
-        mockApiExtension: '',
-        templateRoot: '/dist/templates/',
+        templateRoot: '/templates/',
         templateExtension: '.html',
-        layoutUrl: '/layout.json'
-      },
-      'dashbot.config.log': {
-        enabled: false
-      },
-      'dashbot.config.ui': {
-      }
-    }
-  },
-  local: {
-    constants: {
-      'dashbot.config.environment': {
-        host: '//localhost:9501',
-        apiRoot: '/dist/mocks/',
-        apiJsonExtension: '.json',
-        apiHtmlExtension: '.html',
-        mockApiRoot: '/dist/mocks/',
-        mockApiExtension: '.json',
-        templateRoot: '/dist/templates/',
-        templateExtension: '.html',
-        layoutUrl: '/layout.json'
-      },
-      'dashbot.config.log': {
-        enabled: true
-      },
-      'dashbot.config.ui': {
-      }
-    }
-  },
-  test: {
-    constants: {
-      'dashbot.config.environment': {
-        host: '',
-        apiRoot: '/dist/mocks/',
-        apiJsonExtension: '.json',
-        apiHtmlExtension: '.html',
-        mockApiRoot: '/dist/mocks/',
-        mockApiExtension: '.json',
-        templateRoot: '/dist/templates/',
-        templateExtension: '.html',
-        layoutUrl: '/layout.json'
+        layoutUrl: '/data/layout.json'
       },
       'dashbot.config.log': {
         enabled: true

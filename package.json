@@ -1,87 +1,47 @@
 {
   "name": "dashbot",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Simple dashboard",
   "license": "MIT",
-  "directories": {
-    "test": "test"
-  },
+  "main": "Gruntfile.js",
   "repository": {
-    "type": "git"
+    "type": "git",
+    "url": "ssh://git@github.com:sbstnmsch/dashbot.git"
   },
   "scripts": {
     "build": "./node_modules/.bin/webpack --progress --colors",
-    "serve": "./node_modules/.bin/webpack-dev-server --content-base ./ --colors --port 9501",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run build"
   },
-  "readmeFilename": "readme.md",
+  "readmeFilename": "README.md",
   "devDependencies": {
-    "blanket": "^1.1.6",
-    "bower": "^1.3.12",
-    "chai": "^1.9.2",
-    "chai-as-promised": "^4.1.1",
-    "chai-things": "^0.2.0",
     "css-loader": "^0.9.0",
     "exports-loader": "^0.6.2",
-    "expose-loader": "^0.5.3",
     "file-loader": "^0.7.2",
     "grunt": "^0.4.5",
     "grunt-autoprefixer": "^1.0.1",
-    "grunt-check-dependencies": "^0.8.0",
     "grunt-cli": "^0.1.13",
-    "grunt-concurrent": "^1.0.0",
     "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-copy": "^0.6.0",
     "grunt-contrib-cssmin": "^0.10.0",
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-contrib-stylus": "^0.20.0",
-    "grunt-contrib-watch": "^0.6.1",
     "grunt-jscs": "^0.7.1",
-    "grunt-karma": "^0.9.0",
-    "grunt-mocha-test": "^0.12.2",
     "grunt-ng-constant": "^1.0.0",
     "grunt-processhtml": "^0.3.3",
-    "grunt-protractor-runner": "^1.1.4",
     "grunt-shell": "^1.1.1",
-    "htmlparser": "^1.7.7",
     "imports-loader": "^0.6.3",
     "jscs": "^1.7.1",
-    "jsdom": "^1.0.3",
     "jshint": "^2.5.6",
     "json-loader": "^0.5.1",
-    "karma": "^0.12.24",
-    "karma-html2js-preprocessor": "^0.1.0",
-    "karma-mocha": "^0.1.9",
-    "karma-ng-html2js-preprocessor": "^0.1.2",
-    "karma-teamcity-reporter": "^0.1.2",
-    "karma-webdriver-launcher": "^0.2.0",
-    "karma-webpack": "^1.3.0",
     "load-grunt-config": "^0.13.2",
-    "mocha": "^1.21.5",
-    "mocha-teamcity-reporter": "0.0.2",
-    "optimist": "^0.6.1",
-    "protractor": "^1.4.0",
-    "pubsub-js": "^1.5.0",
-    "script-loader": "^0.6.0",
-    "sinon": "1.10.3",
-    "sinon-chai": "^2.6.0",
-    "soupselect": "^0.2.0",
+    "lodash": "^3.10.1",
     "style-loader": "^0.8.1",
     "stylus": "^0.49.3",
     "time-grunt": "^1.0.0",
-    "travis-cov": "^0.2.5",
     "url-loader": "^0.5.5",
-    "webpack": "^1.4.4",
-    "webpack-dev-server-cors": "^1.6.8"
+    "webpack": "^1.4.4"
   },
-  "optionalDependencies": {
-    "karma-chrome-launcher": "^0.1.5",
-    "karma-firefox-launcher": "^0.1.3",
-    "karma-safari-launcher": "^0.1.1"
-  },
-  "config": {
-    "travis-cov": {
-      "threshold": 10
-    }
+  "dependencies": {
+    "angular": "^1.4.6"
   }
 }

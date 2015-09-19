@@ -1,29 +1,26 @@
 {
   "src": {
+    "angular": "node_modules/angular",
+    "data": "app/examples",
     "js": "app/javascript",
     "css": "app/stylesheets",
     "fonts": "app/woff",
     "images": "app/images",
-    "templates": "app/templates",
-    "mocks": "app/mocks"
+    "templates": "app/templates"
   },
   "dist": {
     "root": "dist",
-    "js": "dist/javascript",
-    "jsbundle": "dist/javascript/mad-js.bundle.js",
-    "css": "dist/stylesheets",
-    "fonts": "dist/woff",
+    "angular": "dist",
+    "data": "dist/data",
+    "js": "dist",
+    "jsbundle": "dist/mad-js.bundle.js",
+    "css": "dist",
+    "fonts": "dist",
     "images": "dist/images",
-    "templates": "dist/templates",
-    "mocks": "dist/mocks"
+    "templates": "dist/templates"
   },
   "lint": [
     "app/**/*.js",
-    "!test/**/*.js",
     "!app/javascript/config/environment.js"
-  ],
-  "test": {
-    "mocha": ["test/unit/**/*.js"],
-    "karma": ["test/browser/**/*.js"]
-  }
+  ]
 }
