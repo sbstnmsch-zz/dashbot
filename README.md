@@ -8,6 +8,8 @@ Rasperry PI or as an intranet website.
 
 ![](app/examples/screenshot.png "Looks like")
 
+A live demo can be found [on heroku](https://dashbotdemo.herokuapp.com/) (The project files can be found here:  [github.com/hennr/dashbotdemo](https://github.com/hennr/dashbotdemo))
+
 ## Build it
 
 ```shell
