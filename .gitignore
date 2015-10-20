@@ -1,11 +1,9 @@
 npm-debug.log*
-
 .grunt
-
 app/javascript/config/environment.js
-
 dist
-
 node_modules
-
 .DS_Store
+.idea
+*.iml
+
