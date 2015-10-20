@@ -161,6 +161,21 @@ Just for fun - getting the temperature in your `city`.
 }
 ```
 
+## Getting data to it
+
+There are two way to get your data displayed by dashbot.
+
+### Write json files to your disk
+When serving the `./dist` folder (as described in [Serve it](#serve-it)) you can find `dummy json files` in the `./dist/data` folder which you can update/rewrite periodically e.g. by a cronjob.
+
+### Use an external server
+Alternatively you can use an external server which serves json and let that server do the updates for you.
+This could look like this:
+
+```javascript
+{ "visual": "number", "xhr": "https://api.github.com/users/hennr", "xhrValue": "id"}
+```
+
 ## Background images
 All background images are downloaded from Wikimedia Commons and can be used in
 every single visual by defining `"class": "<imageid>"`.
