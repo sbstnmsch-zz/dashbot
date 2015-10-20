@@ -31,8 +31,8 @@ $ cd dist && python -m SimpleHTTPServer 8000
 Now point your browser to [http://localhost:8000](http://localhost:8000)
 
 ## Serve it
-To serve the dashboard with nginx or another webserver edit the layout.json to
-serve your needs and point your webserver's root to `dist/`.
+To serve the dashboard with nginx or another web server edit the layout.json to
+serve your needs and point your web server's root to `dist/`.
 
 ### Notes on CORS
 For polling other than local URLs (like in the example) start up your browser
@@ -43,7 +43,7 @@ $ open -a Google\ Chrome --args --disable-web-security
 ```
 
 ## Lay it out
-Dashbot's tiles are called visuals. These visuals are layouted to fill your
+Dashbot's tiles are called visuals. These visuals are designed to fill your 
 screen. Just edit your `layout.json`:
 
 ```javascript
