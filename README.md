@@ -17,16 +17,18 @@ $ npm install
 $ grunt
 ```
 
-## Run it
+## Run it locally
 
+Follow [Build it](#build-it) and then run any of these commands: 
 ```shell
-$ npm install
-$ grunt
-$ nginxere # available at https://github.com/sbstnmsch/nginxere
-           # or just serve ./dist with your favorite webserver
+# via nginxere; available at https://github.com/sbstnmsch/nginxere
+$ nginxere 
+# via python
+$ cd dist && python -m SimpleHTTPServer 8000
+# or by serving ./dist with your favorite web server
 ```
 
-Point your browser to [http://localhost:8000](http://localhost:8000)
+Now point your browser to [http://localhost:8000](http://localhost:8000)
 
 ## Serve it
 To serve the dashboard with nginx or another webserver edit the layout.json to
