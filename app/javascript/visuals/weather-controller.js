@@ -11,7 +11,10 @@ module.exports = {
     'use strict';
 
     var _getWeather = function() {
-      var apiURL = 'http://api.openweathermap.org/data/2.5/weather?lang=en&q=' + $scope.visual.city;
+      var apiURL =
+        'http://api.openweathermap.org/data/2.5/weather?lang=en&q=' +
+        $scope.visual.city +
+        '&appid=bd82977b86bf27fb59a04b61b657fb6f';
       $scope.visual.loading = true;
       $http.get(apiURL)
         .success(function(weather) {

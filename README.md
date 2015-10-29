@@ -152,11 +152,12 @@ parameters.
 
 ### Weather Visual
 Just for fun - getting the temperature in your `city`.
+Kindly provided by [http://openweathermap.org](http://openweathermap.org)
 
 ```javascript
 {
   "visual": "weather",
-  "city": "berlin", /* name of your city or lat, lng */
+  "city": "berlin,de", /* name of your city or lat, lng */
   "unit": "c" /* `c` for celsius, or `f` for fahrenheit */
 }
 ```
