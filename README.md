@@ -188,4 +188,4 @@ every single visual by defining `"class": "<imageid>"`.
 - imageid: [waterfall](http://upload.wikimedia.org/wikipedia/commons/3/36/Hopetoun_falls.jpg)
 - imageid: [flower](http://upload.wikimedia.org/wikipedia/commons/0/03/%28www.mrlupen.com%29_nature_0091.jpg)
 - imageid: [desert](http://upload.wikimedia.org/wikipedia/commons/7/75/Mojave_Desert-2067.jpg)
-- imageid: [storm](http://upload.wikimedia.org/wikipedia/commons/0/04/Storm_over_Miami_Beach.jpg)
+- imageid: [storm](https://commons.wikimedia.org/wiki/File:Storm_over_Miami_Beach.jpg)
