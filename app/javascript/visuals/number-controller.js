@@ -46,7 +46,7 @@ module.exports = {
             $scope.value = newValue;
             _format();
             if ($scope.visual.green && $scope.visual.red) {
-              $scope.visual.build = eval( // jshint ignore:line
+              $scope.visual.build = eval(// jshint ignore:line
                 $scope.value + $scope.visual.green + '? "green" : (' +
                 $scope.value + $scope.visual.red + ' ? "red" : "none") '
               );
@@ -56,6 +56,7 @@ module.exports = {
               $scope.visual.loading = false;
             }, 1000);
           }
+
           if ($scope.visual.xhrInterval) {
             $timeout(_getJson, $scope.visual.xhrInterval * 1000);
           }

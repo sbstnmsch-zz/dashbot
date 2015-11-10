@@ -2,6 +2,9 @@
 module.exports = {
   files: '<%= paths.lint %>',
   options: {
-    preset: 'airbnb'
+    preset: 'airbnb',
+    esnext: true,
+    requireTrailingComma: null,
+    disallowMultipleVarDecl: null
   }
 };

@@ -21,11 +21,13 @@ module.exports = {
         $timeout(function() {
           $scope.visual.loading = false;
         }, 1000);
+
         if ($scope.visual.xhrInterval) {
           $timeout(_getJson, $scope.visual.xhrInterval * 1000);
         }
       });
     },
+
     _draw = function(v) {
       var i = 0;
 
@@ -34,7 +36,7 @@ module.exports = {
       $scope.min = 2000000;
       $scope.max = -2000000;
 
-      for (i = 0;i < $scope.values.length; ++i) {
+      for (i = 0; i < $scope.values.length; ++i) {
         if ($scope.values[i] > $scope.max) {
           $scope.max = $scope.values[i];
         } else if ($scope.values[i] < $scope.min) {

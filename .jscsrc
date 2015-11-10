@@ -1,1 +1,6 @@
-{ "preset": "airbnb" }
+{
+  "preset": "airbnb",
+  "esnext": true,
+  "requireTrailingComma": null,
+  "disallowMultipleVarDecl": null
+}
