@@ -28,7 +28,7 @@
     "grunt-jscs": "2.3.0",
     "grunt-ng-constant": "1.0.0",
     "grunt-processhtml": "0.3.3",
-    "grunt-shell": "1.1.1",
+    "grunt-shell": "1.1.2",
     "imports-loader": "0.6.3",
     "jscs": "2.6.0",
     "jshint": "2.5.6",
