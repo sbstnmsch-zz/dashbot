@@ -40,7 +40,7 @@
     "stylus": "0.52.4",
     "time-grunt": "1.0.0",
     "url-loader": "0.5.7",
-    "webpack": "1.12.8"
+    "webpack": "1.12.9"
   },
   "dependencies": {
     "angular": "1.4.8"
