@@ -5,6 +5,8 @@ module.exports = {
     preset: 'airbnb',
     esnext: true,
     requireTrailingComma: null,
-    disallowMultipleVarDecl: null
+    disallowMultipleVarDecl: null,
+    requireSpacesInAnonymousFunctionExpression: null,
+    requireSpacesInsideObjectBrackets: null
   }
 };

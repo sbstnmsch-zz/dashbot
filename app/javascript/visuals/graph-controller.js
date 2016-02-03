@@ -12,7 +12,9 @@ module.exports = {
   fn: function($scope, $timeout, $http) {
     'use strict';
 
-    var _getJson = function() {
+    var _getJson, _draw;
+
+    _getJson = function() {
       var apiURL = $scope.visual.xhr;
       $scope.visual.loading = true;
       $http.get(apiURL)
@@ -26,7 +28,7 @@ module.exports = {
           $timeout(_getJson, $scope.visual.xhrInterval * 1000);
         }
       });
-    },
+    };
 
     _draw = function(v) {
       var i = 0;
