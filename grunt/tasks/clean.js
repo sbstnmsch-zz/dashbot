@@ -5,6 +5,9 @@ module.exports = {
     ]
   },
   after: {
+    options: {
+      force: true
+    },
     src: ['<%= paths.src.css %>/*.css']
   }
 };
