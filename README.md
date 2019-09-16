@@ -2,6 +2,8 @@
 
 # dashbot
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/sbstnmsch/dashbot.svg)](https://greenkeeper.io/)
+
 ... is yet another live dashboard solution to monitor your software- or
 product development process. Use it for dashboards served by a i.e.
 Rasperry PI or as an intranet website.
