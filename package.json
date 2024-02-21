@@ -43,6 +43,6 @@
     "webpack": "1.13.1"
   },
   "dependencies": {
-    "angular": "1.4.9"
+    "angular": "1.5.5"
   }
 }
